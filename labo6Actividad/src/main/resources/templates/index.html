@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingresar estudiante</title>
+<link href="css/estilo_l6.css" rel="stylesheet">
+</head>
+<body>
+	<div class="contenedor">
+		<form th:action="@{/ingresarEstudiante}" th:object="${estudiante}" method="post">
+			<h2 class="titulo-form">Ingresar estudiante</h2>
+			
+			<label>Nombre:</label> 
+			<input type="text" th:field="*{nombre}" placeholder=" "><br> 
+			<span th:errors="*{nombre}" style="color: #E81505"></span> 
+			
+			<label>Apellido:</label> 
+			<input type="text" th:field="*{apellido}" placeholder=" "> <br> 
+			<span th:errors="*{apellido}" style="color: #E81505"></span> 
+			
+			<label>Carn&eacute;:</label> 
+			<input type="number" th:field="*{carne}" placeholder=" "><br>
+			<span th:errors="*{carne}" style="color: #E81505"></span> 
+			
+			<label>Carrera:</label> 
+			<input type="text" th:field="*{carrera}" placeholder=" "> <br> 
+			<span th:errors="*{carrera}" style="color: #E81505"></span> 
+			
+			<input class="boton" type="submit" value="Ingresar Estudiante">
+		</form>
+		<a href="/listado">
+			<input class="boton-regresar" type="submit" value="Lista de estudiantes">
+		</a>
+	</div>
+</body>
+</html>
